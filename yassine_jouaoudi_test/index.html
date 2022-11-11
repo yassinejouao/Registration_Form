@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="./images//favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <title>Formulaire d'inscription</title>
+  </head>
+  <body>
+    <div class="homeContainer">
+      <div class="pageContainer">
+        <!-- form -->
+        <div class="formulaireContainer">
+          <!-- icon in top left -->
+          <div class="iconContainer">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+          </div>
+          <form class="formContainer" onsubmit="return check()">
+            <!-- form title  -->
+            <div class="titleContainer"><h1>Inscrivez-vous</h1></div>
+            <!-- form inputs -->
+            <div class="inputContainer">
+              <input type="text" placeholder="Nom complet" required />
+            </div>
+            <div class="inputContainer">
+              <input type="email" placeholder="Adresse email" required />
+            </div>
+            <div class="inputContainer">
+              <input
+                id="passwordText"
+                type="password"
+                placeholder="Mot de passe"
+                required
+                pattern="^(?=.*\W)[a-zA-Z0-9\S]{10,}$"
+                onkeyup="checkregex();"
+              />
+              <h3 class="info">
+                Le mot de passe doit contenir minimum 10 caractères dont 1
+                caractère spécial
+              </h3>
+              <span id="passwordShowHide" class="showHidePassword"
+                ><i class="fa fa-eye-slash" aria-hidden="true"></i
+              ></span>
+            </div>
+
+            <div class="inputContainer">
+              <input
+                id="passwordConfirmationText"
+                type="password"
+                placeholder="Confirmer mot de passe"
+                required
+                onkeyup="check();"
+              />
+              <h3 id="message" class="info">
+                Le mot de passe doit contenir minimum 10 caractères dont 1
+                caractère spécial
+              </h3>
+              <span id="passwordConfirmationShowHide" class="showHidePassword"
+                ><i class="fa fa-eye-slash" aria-hidden="true"></i
+              ></span>
+            </div>
+            <!-- password and checkbox -->
+            <div class="CheckBoxAndButtonContainer">
+              <label class="CheckBoxContainer">
+                <input type="checkbox" />
+                <span class="checkmark">Se souvenir de moi</span>
+              </label>
+              <button class="ButtonSinscrire">S'inscrire</button>
+            </div>
+            <!-- separator -->
+            <div class="orContainer">
+              <span>OR</span>
+            </div>
+            <!-- social media button -->
+            <div class="SocialMediaRegistrationContainer">
+              <!-- facebook button -->
+              <button class="fbbutton">
+                <i class="fa fa-facebook" aria-hidden="true"></i
+                >&nbsp;&nbsp;&nbsp;&nbsp;S'inscrire avec facebook
+              </button>
+              <!-- google button -->
+              <button class="glbutton">
+                <i class="fa fa-google" aria-hidden="true"></i
+                >&nbsp;&nbsp;&nbsp;&nbsp;S'inscrire avec google
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- right image -->
+        <div class="imageContainer">
+          <div class="image"><img src="./images/image.webp" alt="" /></div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+      <div class="footer-image"><img src="./images/image.png" alt="" /></div>
+    </div>
+  </body>
+</html>
+
+<script src="./index.js"></script>
